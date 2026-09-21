@@ -35,18 +35,17 @@ in sync with the cards. Filter chips use the `tags` field.
 
 ## Hosting on GitHub Pages
 
-1. Create an empty repository on GitHub, e.g. `RobotecAI/roscon2026-simulation-toolbox`.
+1. Create the empty repository `RobotecAI/simulation-toolbox` on GitHub (the remote is already configured).
 2. Push this directory to its `main` branch:
 
    ```bash
-   git remote add origin git@github.com:RobotecAI/roscon2026-simulation-toolbox.git
    git push -u origin main
    ```
 
 3. In the repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 4. The `Deploy to GitHub Pages` workflow runs on the push (or trigger it under
    **Actions → Run workflow**). About a minute later the site is live at
-   `https://<owner>.github.io/<repo>/`.
+   <https://robotecai.github.io/simulation-toolbox/>.
 
 The workflow reads the final URL from GitHub, so the site works unchanged for
 a project page, an organisation page or a custom domain (add the domain under
@@ -55,16 +54,15 @@ in so the page shows "edit / report a stale link" links.
 
 ### QR code for the slides
 
-Once the URL is known:
+Already generated for the URL above (`static/img/qr-slides.png`, 2048 px). To regenerate:
 
 ```bash
 pip install "qrcode[pil]"
-python3 tools/make_qr.py https://robotecai.github.io/roscon2026-simulation-toolbox/
+python3 tools/make_qr.py https://robotecai.github.io/simulation-toolbox/
 ```
 
-This writes `static/img/qr-slides.png` (2048 px, for the deck) and
-`static/img/qr.png`, which the page shows automatically in the Q&A box after
-the next build. Commit and push.
+This writes `static/img/qr-slides.png` (for the deck) and `static/img/qr.png`,
+which the page shows automatically in the Q&A box.
 
 ## Local preview
 
