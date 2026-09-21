@@ -1,0 +1,35 @@
+title: Talks and further reading
+groups:
+  - title: Talks
+    items:
+      - label: "ROSCon 2025 · Introducing the new ROS simulation standard"
+        url: https://vimeo.com/1136376172
+        text: Adam Dąbrowski (Robotec.ai, O3DE), Ian Chen (Intrinsic, Gazebo) and Ayush Ghosh (NVIDIA, Isaac Sim) on Simulation Interfaces and their implementation in three simulators.
+      - label: "ROSCon 2023 · Simulate robots like never before with Open 3D Engine"
+        url: https://vimeo.com/879001753
+        text: The simulator overview this session updates. 36 robots, 700 nodes and 6,500 topics in one photorealistic warehouse.
+      - label: ROSCon 2023 landing page
+        url: https://robotecai.github.io/roscon2023-landing-page/
+        text: Slides, demo project and O3DE templates from that talk.
+  - title: Community
+    items:
+      - label: ros-simulation on GitHub
+        url: https://github.com/ros-simulation
+        text: Home of simulation_interfaces, the examples and the OpenUSD schemas.
+      - label: ROS Discourse · simulation tag
+        url: https://discourse.openrobotics.org/tag/simulation
+        text: Where the REP-158 discussion and simulator announcements happen.
+      - label: Standardising simulation interfaces (blog)
+        url: https://www.robotec.ai/blog/robotics/standardizing-simulation-interfaces-for-open-source-robotics
+        text: Why the standard exists and how the warehouse example came together.
+      - label: ROSCon 2026
+        url: https://roscon.ros.org/2026/
+        text: Toronto, 22–24 September 2026.
+# Optional: link the other sessions of the workshop. Rendered only when `url` is set.
+workshop_sessions: []
+#  - title: Fine-tuning on GPUs, from cloud to robot
+#    url: ""
+#  - title: Reinforcement learning for robotics
+#    url: ""
+#  - title: Local inference of embodied AI
+#    url: ""

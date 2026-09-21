@@ -1,0 +1,10 @@
+{{- $a := site.Data.agents -}}
+<section class="section" id="agents">
+  <div class="wrap">
+    <h2>{{ $a.title }}</h2>
+    <p class="intro">{{ $a.intro }}</p>
+    <dl class="points points-grid">
+    {{- range $a.items }}<div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>{{ end }}
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+{{- $st := site.Data.standards -}}
+<section class="section" id="standards">
+  <div class="wrap">
+    <h2>{{ $st.title }}</h2>
+    <p class="intro">{{ $st.intro }}</p>
+
+    <div class="stack" aria-label="What needs to be shared between simulators">
+      {{- range $st.toolbox }}
+      <a class="layer layer-{{ .status | replaceRE " " "-" }}" href="#{{ .ref }}">
+        <span class="layer-shared">{{ .shared }}</span>
+        <span class="layer-reusable">{{ .reusable }}</span>
+        <span class="layer-enabling">{{ .enabling }}</span>
+        <span class="layer-status">{{ .status }}</span>
+      </a>
+      {{- end }}
+    </div>
+
+    {{- with $st.simulation_interfaces }}
+    <article class="standard" id="{{ .id }}">
+      <div class="standard-text">
+        <h3>{{ .title }} <span class="badge badge-ok">{{ .status }}</span></h3>
+        <p>{{ .summary }}</p>
+        <dl class="points">
+        {{- range .points }}<div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>{{ end }}
+        </dl>
+        {{ partial "link-chips.html" .links }}
+      </div>
+      {{- with .image }}
+      <figure class="standard-figure">
+        <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" width="1600" height="760">
+        <figcaption>{{ .caption }}</figcaption>
+      </figure>
+      {{- end }}
+    </article>
+    {{- end }}
+
+    {{- with $st.rep158 }}
+    <article class="standard" id="{{ .id }}">
+      <div class="standard-text">
+        <h3>{{ .title }} <span class="badge badge-vote">{{ .status }}</span></h3>
+        <p>{{ .summary }}</p>
+        <ol class="pillars">
+        {{- range .pillars }}<li><strong>{{ .title }}</strong><span>{{ .text }}</span></li>{{ end }}
+        </ol>
+        {{ partial "link-chips.html" .links }}
+      </div>
+    </article>
+    {{- end }}
+
+    {{- with $st.cosim }}
+    <article class="standard standard-open" id="{{ .id }}">
+      <div class="standard-text">
+        <h3>{{ .title }} <span class="badge badge-open">{{ .status }}</span></h3>
+        <p>{{ .text }}</p>
+        {{ partial "link-chips.html" .links }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</section>

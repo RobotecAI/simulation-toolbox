@@ -1,0 +1,37 @@
+title: Practice · fine-tune a walking policy
+intro: >
+  The exercise starts from a policy trained for flat ground and fine-tunes it
+  on increasingly difficult stairs, then compares both policies in the same
+  evaluation setup.
+# TODO(adam): paste the notebook URLs once published. Empty url = rendered as "link to be published".
+notebooks:
+  - title: Humanoid locomotion · training
+    url: ""
+    text: Terrain, rewards, curriculum and PPO fine-tuning. Start it first and let it train in the background.
+  - title: Humanoid locomotion · evaluation
+    url: ""
+    text: Visualise the generated terrain, measure fall rate across difficulty levels and compare baseline against fine-tuned.
+levers:
+  - title: Terrain and curriculum
+    text: Introduce the new conditions and control their difficulty.
+  - title: Rewards
+    text: Revisit foot clearance, slip and body orientation.
+  - title: Observations
+    text: Review terrain and foot-height information available to the policy.
+# TODO(adam): confirm the number and metric definition with the exercise team.
+result:
+  headline: Fall rate across all terrain difficulty levels reduced from 24% to 1%
+  text: Same terrain, commands, camera and duration for both policies. Compare falls, foot clearance, slip and body orientation.
+images:
+  terrain:
+    src: img/terrain-curriculum.jpg
+    alt: Procedurally generated stair terrains of increasing difficulty
+    caption: Terrain curriculum — stairs of increasing difficulty.
+  baseline:
+    src: img/rollout-baseline.jpg
+    alt: Baseline policy rollout on stairs
+    caption: Baseline (flat-ground policy)
+  finetuned:
+    src: img/rollout-finetuned.jpg
+    alt: Fine-tuned policy rollout on stairs
+    caption: Fine-tuned

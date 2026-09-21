@@ -1,0 +1,6 @@
+{{- /* Renders a list of {label,url,kind} as chips. Pass the links slice. */ -}}
+<ul class="chips">
+{{- range . }}
+  <li><a class="chip chip-{{ .kind | default "docs" }}" href="{{ .url }}" rel="noopener">{{ .label }}</a></li>
+{{- end }}
+</ul>

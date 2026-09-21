@@ -1,0 +1,21 @@
+# Site configuration. Content lives in data/*.yaml and content/_index.md;
+# presentation lives in layouts/ and assets/. Keep this file to plumbing.
+
+# Overridden by the GitHub Actions workflow with the real Pages URL,
+# so it works for any repository name or custom domain out of the box.
+baseURL = "http://localhost:1313/"
+languageCode = "en"
+title = "Simulation Toolbox · ROSCon 2026"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS", "section", "page"]
+
+[params]
+  # Set automatically in CI from the repository that builds the site.
+  # Fill in manually if you build elsewhere; leave empty to hide the "source" links.
+  repourl = ""
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[minify]
+  minifyOutput = true

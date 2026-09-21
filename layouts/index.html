@@ -1,0 +1,22 @@
+{{- /* Single-page layout. Sections are partials; all copy comes from data/*.yaml and content/_index.md. */ -}}
+<!doctype html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+<a class="skip" href="#choose">Skip to content</a>
+{{ partial "nav.html" . }}
+<main>
+  {{ partial "hero.html" . }}
+  {{ partial "choose.html" . }}
+  {{ partial "simulators.html" . }}
+  {{ partial "tools.html" . }}
+  {{ partial "standards.html" . }}
+  {{ partial "practice.html" . }}
+  {{ partial "agents.html" . }}
+  {{ partial "resources.html" . }}
+  {{ partial "contribute.html" . }}
+</main>
+{{ partial "footer.html" . }}
+{{ partial "script.html" . }}
+</body>
+</html>

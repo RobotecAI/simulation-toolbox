@@ -1,0 +1,34 @@
+{{- $sims := site.Data.simulators -}}
+{{- $s := site.Data.site -}}
+<section class="section" id="simulators">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The toolbox</h2>
+      <p class="intro">Release labels and links verified {{ $s.verified }}. Each card links to the canonical place to watch for new releases.</p>
+      <div class="filters" role="group" aria-label="Filter simulators by workload">
+        <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="sil" aria-pressed="false">Software-in-the-loop</button>
+        <button class="filter" data-filter="learning" aria-pressed="false">Robot learning</button>
+        <button class="filter" data-filter="physics" aria-pressed="false">Custom physics</button>
+      </div>
+    </div>
+    <div class="cards">
+    {{- range $sims }}
+      <article class="card sim" id="sim-{{ .id }}" data-tags="{{ delimit .tags " " }}">
+        <header class="card-head">
+          <h3>{{ .name }}</h3>
+          <p class="version"><span class="badge">{{ .version }}</span><span class="muted">{{ .released }}</span></p>
+        </header>
+        <p class="one-liner">{{ .one_liner }}</p>
+        <dl class="points">
+        {{- range .points }}
+          <div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>
+        {{- end }}
+        </dl>
+        {{- with .caveat }}<p class="caveat">{{ . }}</p>{{ end }}
+        {{ partial "link-chips.html" .links }}
+      </article>
+    {{- end }}
+    </div>
+  </div>
+</section>

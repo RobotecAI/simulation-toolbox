@@ -1,0 +1,28 @@
+{{- /* Workload spectrum: data-driven from simulators.yaml (workload 0..100, optional label_side: up|down).
+       Inline SVG, theme-aware via CSS classes. */ -}}
+{{- $w := 1000 }}{{ $pad := 70 }}{{ $axisY := 100 }}
+<svg class="spectrum-svg" viewBox="0 0 {{ $w }} 222" role="img" aria-label="Simulators placed on a spectrum from software-in-the-loop to robot learning">
+  <defs>
+    <linearGradient id="spec-grad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" class="stop-sil"/>
+      <stop offset="1" class="stop-learn"/>
+    </linearGradient>
+  </defs>
+  <rect x="{{ $pad }}" y="{{ sub $axisY 4 }}" width="{{ sub $w (mul 2 $pad) }}" height="8" rx="4" fill="url(#spec-grad)" opacity="0.85"/>
+  <text x="{{ $pad }}" y="196" class="axis-label">Software-in-the-loop</text>
+  <text x="{{ $pad }}" y="215" class="axis-sub">authored environments · distributed stack · sim drives the clock</text>
+  <text x="{{ sub $w $pad }}" y="196" class="axis-label" text-anchor="end">Robot learning</text>
+  <text x="{{ sub $w $pad }}" y="215" class="axis-sub" text-anchor="end">focused episodes · GPU batching · algorithm steps the sim</text>
+  {{- range $i, $sim := . }}
+  {{- $x := add $pad (div (mul (sub $w (mul 2 $pad)) $sim.workload) 100) }}
+  {{- $side := $sim.label_side | default (cond (eq (mod $i 2) 0) "up" "down") }}
+  {{- $up := eq $side "up" }}
+  {{- $ly := cond $up 58 142 }}
+  {{- $ty := cond $up 48 160 }}
+  <g class="spec-pt">
+    <line x1="{{ $x }}" y1="{{ $axisY }}" x2="{{ $x }}" y2="{{ $ly }}" class="spec-stem"/>
+    <circle cx="{{ $x }}" cy="{{ $axisY }}" r="9" class="spec-dot"/>
+    <a href="#sim-{{ $sim.id }}"><text x="{{ $x }}" y="{{ $ty }}" text-anchor="middle" class="spec-label">{{ $sim.name | replaceRE " · .*" "" }}</text></a>
+  </g>
+  {{- end }}
+</svg>

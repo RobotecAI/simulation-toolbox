@@ -1,0 +1,21 @@
+title: Building with AI agents
+intro: Notes from using coding agents on simulation work.
+items:
+  - title: Skills
+    text: >
+      Build skills for your simulator first, especially when versions carry
+      large diffs (Gazebo / Ignition). Include skills that present you with
+      renders and other evidence.
+  - title: Sim engineering
+    text: >
+      As with most code, but spatio-temporal reasoning has limits and images
+      cost input tokens. Have good validation methods and inspect the
+      highest-signal artifacts.
+  - title: Scene assembly and scenario testing
+    text: >
+      Agents can quickly and quite successfully compose your assets into a
+      reasonable scene. Drive them through Simulation Interfaces.
+  - title: 3D model and scene generation
+    text: >
+      Simplified models can be generated from photos of the place. They are a
+      good starting point rather than a finished asset.

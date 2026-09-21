@@ -1,0 +1,38 @@
+{{- $r := site.Data.resources -}}
+{{- $s := site.Data.site -}}
+<section class="section section-alt" id="resources">
+  <div class="wrap">
+    <h2>{{ $r.title }}</h2>
+    <div class="res-groups">
+    {{- range $r.groups }}
+      <div>
+        <h3>{{ .title }}</h3>
+        <ul class="res-list">
+        {{- range .items }}
+          <li><a href="{{ .url }}" rel="noopener">{{ .label }}</a>{{ with .text }}<span>{{ . }}</span>{{ end }}</li>
+        {{- end }}
+        </ul>
+      </div>
+    {{- end }}
+    {{- $sessions := where $r.workshop_sessions "url" "ne" "" }}
+    {{- with $sessions }}
+      <div>
+        <h3>Other sessions in this workshop</h3>
+        <ul class="res-list">
+        {{- range . }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}</a></li>{{ end }}
+        </ul>
+      </div>
+    {{- end }}
+    </div>
+
+    <div class="qa">
+      <h3>Sharing and Q&amp;A</h3>
+      <ul>
+      {{- range $s.questions }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      {{- if fileExists "static/img/qr.png" }}
+      <figure class="qr"><img src="{{ "img/qr.png" | relURL }}" alt="QR code linking to this page" width="160" height="160"><figcaption>This page</figcaption></figure>
+      {{- end }}
+    </div>
+  </div>
+</section>

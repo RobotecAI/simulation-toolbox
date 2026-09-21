@@ -1,0 +1,152 @@
+# The core simulators covered in the talk, one entry each.
+#
+#   id        anchor used by cheatsheet.yaml (#sim-<id>)
+#   workload  0 = software-in-the-loop, 100 = robot learning; drives the spectrum graphic
+#   label_side  up | down (optional) — where the spectrum label sits; default alternates
+#   tags      sil | learning | physics  (drive the filter chips)
+#   links     kind: release | docs | ros | learning | demo   (drives the icon/colour)
+#   verified  date the version label and links were last checked upstream
+#
+# To bump a release: change `version`/`released`, update `verified`, done.
+
+- id: gazebo
+  name: Gazebo
+  version: Jetty LTS
+  released: 2025-09
+  verified: 2026-09-17
+  workload: 8
+  tags: [sil]
+  one_liner: Start here, and you can stay. The community standard for ROS application development and testing.
+  points:
+    - title: Great support for ROS packages
+      text: gz_ros2_control provides a controller-manager system plugin; Nav2 maintains Gazebo-based examples; ros_gz_bridge maps supported message types.
+    - title: Composable simulation
+      text: SDF, Fuel assets and system/sensor plugins support repeatable scenarios. Custom types need conversions at the bridge, or a plugin can use ROS directly.
+    - title: Jetty demonstrates the standards
+      text: Open-RMF warehouse operations and Simulation Interfaces ship as official demos.
+  caveat: Jetty LTS is supported through May 2031. Match versions — the control integration currently pairs Lyrical/Jetty and Jazzy/Harmonic.
+  links:
+    - { label: Documentation, url: "https://gazebosim.org/docs/latest/", kind: docs }
+    - { label: Releases, url: "https://gazebosim.org/docs/latest/releases/", kind: release }
+    - { label: Release notes, url: "https://gazebosim.org/docs/latest/release_notes/", kind: release }
+    - { label: ros_gz_bridge, url: "https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_bridge", kind: ros }
+    - { label: gz_ros2_control, url: "https://github.com/ros-controls/gz_ros2_control", kind: ros }
+    - { label: Nav2 minimal simulation, url: "https://github.com/ros-navigation/nav2_minimal_turtlebot_simulation", kind: demo }
+
+- id: o3de
+  name: O3DE · Open 3D Engine
+  version: 26.05.0
+  released: 2026-05-27
+  verified: 2026-09-17
+  workload: 4
+  tags: [sil]
+  one_liner: Operational environments with native ROS 2. Focused on development, software-in-the-loop and operations; no robot-learning stack.
+  points:
+    - title: Operational environments
+      text: Editor, prefabs and scripted behaviours model facilities and interacting subsystems, including multi-robot fleets.
+    - title: Native ROS 2
+      text: Custom messages, services and actions use ROS APIs directly. Built-in TF, time and namespaces; Nav2 and MoveIt integrations.
+    - title: 26.05 adds
+      text: ROS 2 Lyrical support and expanded Simulation Interfaces; warehouse and manipulation templates as starting points.
+  caveat: No support for robot learning by design. Evaluate it, together with Unreal, when authoring the environment is a large part of the work.
+  links:
+    - { label: Robotics overview, url: "https://www.docs.o3de.org/docs/user-guide/interactivity/robotics/overview/", kind: docs }
+    - { label: ROS 2 Gem reference, url: "https://www.docs.o3de.org/docs/user-guide/gems/reference/robotics/ros2/", kind: ros }
+    - { label: 26.05.0 release notes, url: "https://github.com/o3de/sig-release/blob/main/releases/26.05.0/26.05.0.md", kind: release }
+    - { label: All release notes, url: "https://docs.o3de.org/docs/release-notes/", kind: release }
+    - { label: ROS 2 project templates, url: "https://www.docs.o3de.org/docs/learning-guide/samples/templates/", kind: demo }
+    - { label: o3de-extras (gems), url: "https://github.com/o3de/o3de-extras", kind: ros }
+    - { label: Agentic mobile manipulator demo, url: "https://github.com/RobotecAI/agentic-mobile-manipulator", kind: demo }
+    - { label: RAI agent framework, url: "https://github.com/RobotecAI/rai", kind: demo }
+
+- id: isaac-sim
+  name: Isaac Sim
+  version: "6.1"
+  released: 2026-09-15
+  verified: 2026-09-17
+  workload: 45
+  tags: [sil, learning]
+  one_liner: Perception data, application workflows and policy evaluation in one RTX-rendered stack; Isaac Lab supplies training.
+  points:
+    - title: Perception and data
+      text: Replicator combines scene randomisation with labelled sensor output for perception pipelines.
+    - title: Application workflows
+      text: Nav2, MoveIt and ros2_control connect sensing, planning and actuation. Custom ROS interfaces are supported with the documented build setup.
+    - title: Learning and evaluation
+      text: Isaac Lab supplies training workflows; 6.1 improves policy testing and configuration transfer into Isaac Sim.
+  caveat: The documented setup requires supported NVIDIA RTX hardware. Policy transfer is a workflow, not a guarantee.
+  links:
+    - { label: 6.1 announcement, url: "https://forums.developer.nvidia.com/t/isaac-sim-6-1-general-availability/383280", kind: release }
+    - { label: Requirements, url: "https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/requirements.html", kind: docs }
+    - { label: ROS 2 tutorials, url: "https://docs.isaacsim.omniverse.nvidia.com/6.1.0/ros2_tutorials/index.html", kind: ros }
+    - { label: Custom ROS 2 messages, url: "https://docs.isaacsim.omniverse.nvidia.com/6.1.0/ros2_tutorials/custom_interfaces/tutorial_ros2_custom_message_python.html", kind: ros }
+    - { label: Replicator tutorials, url: "https://docs.isaacsim.omniverse.nvidia.com/6.1.0/replicator_tutorials/index.html", kind: docs }
+    - { label: Isaac Lab docs, url: "https://isaac-sim.github.io/IsaacLab/main/index.html", kind: learning }
+    - { label: Isaac Lab repository, url: "https://github.com/isaac-sim/IsaacLab", kind: learning }
+
+- id: mujoco
+  name: MuJoCo
+  version: 3.13.0
+  released: 2026-09
+  verified: 2026-09-17
+  workload: 84
+  tags: [learning, physics]
+  one_liner: Control mechanics for locomotion and manipulation, with a ready learning stack around the engine.
+  points:
+    - title: Control mechanics
+      text: Contacts, actuators, tendons and constraints suit locomotion and manipulation. 3.13.0 adds a discrete integrator for stiff springs and actuation.
+    - title: A ready learning stack
+      text: Playground provides tasks and training examples; Menagerie provides robot models.
+    - title: Execution choices
+      text: CPU MuJoCo, MJX/JAX and MuJoCo Warp differ in supported features and hardware.
+  caveat: Model features and batching support differ across CPU, JAX and Warp execution. Check the feature matrix for your path.
+  links:
+    - { label: Engine releases, url: "https://github.com/google-deepmind/mujoco/releases", kind: release }
+    - { label: MuJoCo Playground, url: "https://playground.mujoco.org/", kind: learning }
+    - { label: Playground repository, url: "https://github.com/google-deepmind/mujoco_playground", kind: learning }
+    - { label: Menagerie robot models, url: "https://github.com/google-deepmind/mujoco_menagerie", kind: demo }
+    - { label: MJX documentation, url: "https://mujoco.readthedocs.io/en/stable/mjx.html", kind: docs }
+    - { label: Computation overview, url: "https://mujoco.readthedocs.io/en/stable/computation/index.html", kind: docs }
+
+- id: newton
+  name: Newton
+  version: 1.6.0
+  released: 2026-09
+  verified: 2026-09-17
+  workload: 74
+  tags: [learning, physics]
+  one_liner: OpenUSD + MuJoCo + Warp. An extensible GPU physics engine under the Linux Foundation.
+  points:
+    - title: Extensible physics
+      text: Warp kernels and solver selection; deformables, gradients, constraints and material coupling. Hydroelastic contact and deformable examples show why solver choice matters.
+    - title: 1.6.0 adds
+      text: OpenUSD particle and deformable workflows and compliant-mechanism capabilities. Some controller features remain explicitly experimental.
+    - title: Ecosystem lesson
+      text: Its relationship to MuJoCo Warp and Isaac Sim shows how engines, solvers and applications now layer.
+  caveat: Requires Warp (CUDA JIT), so an NVIDIA backend, despite the open governance.
+  links:
+    - { label: Repository and examples, url: "https://github.com/newton-physics/newton", kind: docs }
+    - { label: Releases, url: "https://github.com/newton-physics/newton/releases", kind: release }
+    - { label: Solver feature matrix, url: "https://newton-physics.github.io/newton/stable/solvers/index.html", kind: docs }
+
+- id: genesis
+  name: Genesis World
+  version: 1.4.1
+  released: 2026-09-12
+  verified: 2026-09-17
+  workload: 92
+  label_side: up
+  tags: [learning, physics]
+  one_liner: Python-driven multiphysics with parallel, heterogeneous environments for training.
+  points:
+    - title: Coupled physics
+      text: Rigid bodies, deformables and particles can share a scene through explicit solver coupling (FEM, MPM, PBD/SPH).
+    - title: Task variation at scale
+      text: Parallel and heterogeneous environments, domain randomisation and batched IK support training.
+    - title: Beyond state-only policies
+      text: Camera, depth, contact and tactile sensing support perception and interaction tasks.
+  caveat: Supported combinations depend on solver and backend; the renderer currently requires NVIDIA. Main-branch examples can lead tagged releases.
+  links:
+    - { label: Repository, url: "https://github.com/Genesis-Embodied-AI/genesis-world", kind: docs }
+    - { label: Releases, url: "https://github.com/Genesis-Embodied-AI/genesis-world/releases", kind: release }
+    - { label: Genesis Nyx renderer, url: "https://github.com/Genesis-Embodied-AI/genesis-nyx", kind: docs }

@@ -1,0 +1,14 @@
+{{- $s := site.Data.site -}}
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>{{ $s.title }}</a>
+    <nav aria-label="Sections">
+      <a href="#choose">Choose</a>
+      <a href="#simulators">Simulators</a>
+      <a href="#standards">Standards</a>
+      <a href="#practice">Practice</a>
+      <a href="#resources">Resources</a>
+      <a class="btn btn-sm" href="{{ $s.slides.pdf | relURL }}">{{ $s.slides.label }}</a>
+    </nav>
+  </div>
+</header>

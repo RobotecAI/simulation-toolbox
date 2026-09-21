@@ -1,0 +1,22 @@
+{{- $s := site.Data.site -}}
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{{ $s.event.name }} · {{ $s.event.location }} · {{ $s.event.dates }}</p>
+      <h1>{{ $s.title }}<span class="tagline">{{ $s.tagline }}</span></h1>
+      <div class="lede">{{ .Content }}</div>
+      <p class="byline">{{ $s.speaker.name }}, {{ $s.speaker.affiliation }}
+        {{- with $s.event.workshop_url }} · <a href="{{ . }}">{{ $s.event.workshop_name }}</a>{{ end }}</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="{{ $s.slides.pdf | relURL }}">{{ $s.slides.label }}</a>
+        <a class="btn" href="#practice">Practice notebooks</a>
+        <a class="btn" href="#standards">Standards</a>
+      </div>
+    </div>
+    <ol class="outline" aria-label="Session outline">
+      {{- range $s.session_outline }}
+      <li><strong>{{ .title }}</strong><span>{{ .text }}</span></li>
+      {{- end }}
+    </ol>
+  </div>
+</section>

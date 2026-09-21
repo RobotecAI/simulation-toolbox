@@ -1,0 +1,48 @@
+{{- $p := site.Data.practice -}}
+<section class="section section-alt" id="practice">
+  <div class="wrap">
+    <h2>{{ $p.title }}</h2>
+    <p class="intro">{{ $p.intro }}</p>
+
+    <div class="notebooks">
+    {{- range $p.notebooks }}
+      <article class="card notebook">
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        {{- if .url }}
+        <a class="btn btn-primary" href="{{ .url }}" rel="noopener">Open notebook</a>
+        {{- else }}
+        <span class="btn btn-disabled" aria-disabled="true">Link to be published</span>
+        {{- end }}
+      </article>
+    {{- end }}
+    </div>
+
+    <div class="practice-grid">
+      <div>
+        <h3>What we change</h3>
+        <dl class="points">
+        {{- range $p.levers }}<div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>{{ end }}
+        </dl>
+        {{- with $p.result }}
+        <p class="result"><strong>{{ .headline }}</strong><br>{{ .text }}</p>
+        {{- end }}
+      </div>
+      {{- with $p.images.terrain }}
+      <figure>
+        <img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" width="1400" height="1283">
+        <figcaption>{{ .caption }}</figcaption>
+      </figure>
+      {{- end }}
+    </div>
+
+    <div class="compare-grid">
+      {{- with $p.images.baseline }}
+      <figure><img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" width="1000" height="488"><figcaption>{{ .caption }}</figcaption></figure>
+      {{- end }}
+      {{- with $p.images.finetuned }}
+      <figure><img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy" width="1000" height="488"><figcaption>{{ .caption }}</figcaption></figure>
+      {{- end }}
+    </div>
+  </div>
+</section>

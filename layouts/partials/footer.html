@@ -1,0 +1,9 @@
+{{- $s := site.Data.site -}}
+{{- $repo := site.Params.repourl -}}
+<footer class="footer">
+  <div class="wrap footer-in">
+    <p>{{ $s.speaker.name }} · {{ range $i, $l := $s.speaker.links }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}" rel="noopener">{{ $l.label }}</a>{{ end }}</p>
+    <p class="muted">Text and diagrams <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Project names and screenshots belong to their respective projects.
+      {{- if $repo }} · <a href="{{ $repo }}">Site source</a>{{ end }} · Built {{ now.Format "2 Jan 2006" }}.</p>
+  </div>
+</footer>

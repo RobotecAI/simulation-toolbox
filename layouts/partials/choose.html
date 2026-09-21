@@ -1,0 +1,46 @@
+{{- $c := site.Data.cheatsheet -}}
+{{- $sims := site.Data.simulators -}}
+<section class="section" id="choose">
+  <div class="wrap">
+    <h2>Which simulator fits your problem?</h2>
+    <p class="intro">{{ $c.intro }}</p>
+
+    <figure class="spectrum" aria-labelledby="spectrum-title">
+      <figcaption id="spectrum-title">Most simulators favour one workload. Software-in-the-loop replaces the robot and environment while exercising distributed production software; robot learning steps many parallel copies of a focused task in memory.</figcaption>
+      {{ partial "spectrum-svg.html" $sims }}
+    </figure>
+
+    <div class="table-scroll">
+      <table class="cheatsheet">
+        <thead><tr><th>My problem</th><th>Candidates</th><th>Deciding factor</th><th>Question that narrows the choice</th></tr></thead>
+        <tbody>
+        {{- range $c.rows }}
+          <tr>
+            <th scope="row">{{ .problem }}</th>
+            <td data-label="Candidates">{{ range $i, $cand := .candidates }}{{ if $i }}, {{ end }}<a href="#sim-{{ $cand.ref }}">{{ $cand.name }}</a>{{ end }}</td>
+            <td data-label="Deciding factor">{{ .factor }}</td>
+            <td class="muted" data-label="Question that narrows the choice">{{ .question }}</td>
+          </tr>
+        {{- end }}
+        </tbody>
+      </table>
+    </div>
+
+    <details class="compare">
+      <summary>Software-in-the-loop vs robot learning — the architectural trade-offs</summary>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th></th><th>Software-in-the-loop</th><th>Robot learning</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Goal</th><td>Replace hardware for development and full use-case testing</td><td>Teach a skill, usually with an isolated task</td></tr>
+          <tr><th scope="row">Performance</th><td>Scene complexity, sensor fidelity and volume, robot count</td><td>Time to train, GPU batching and parallel environments</td></tr>
+          <tr><th scope="row">APIs</th><td>ROS, sockets and drivers; distributed communication</td><td>In-memory tensors; no middleware in the rollout loop</td></tr>
+          <tr><th scope="row">Time</th><td>Simulation drives the clock for the application stack</td><td>The learning algorithm steps the simulation</td></tr>
+          <tr><th scope="row">Scaling</th><td>Headless test jobs across cloud workers; real-time factor</td><td>Vectorised environment instances on the GPU</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="muted">An RL wrapper does not provide GPU batching, fast resets or scalable training. Scaling a learning task to an operating factory also needs scene authoring, behaviours and APIs. A factory-looking scene is not yet a simulation of an operating factory.</p>
+    </details>
+  </div>
+</section>

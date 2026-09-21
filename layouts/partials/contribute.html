@@ -1,0 +1,8 @@
+{{- $repo := site.Params.repourl -}}
+<section class="section" id="contribute">
+  <div class="wrap contribute">
+    <h2>Keep this page current</h2>
+    <p>Simulators release faster than slides. Every version label and link on this page lives in a small set of YAML files, so a new release is a one-line change.
+    {{- if $repo }} Open a pull request against <a href="{{ $repo }}">the repository</a>, or <a href="{{ $repo }}/issues/new">report a stale link</a>.{{ end }}</p>
+  </div>
+</section>
