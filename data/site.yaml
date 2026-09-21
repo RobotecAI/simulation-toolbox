@@ -30,8 +30,8 @@ session_outline:
   - title: Standards
     text: Reuse simulation workloads and assets.
   - title: Practice
-    text: Fine-tune a walking policy and take the resources home.
+    text: Fine-tune a humanoid walking policy and take the resources home.
 questions:
   - What is hard to simulate?
   - What did you use successfully?
-  - What are the gaps for multi-simulation?
+  - What are the gaps for co-simulation?

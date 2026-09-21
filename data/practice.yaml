@@ -1,4 +1,4 @@
-title: Practice · fine-tune a walking policy
+title: Practice · fine-tune a humanoid walking policy
 intro: Started from a policy trained for flat ground. Increasingly difficult stairs. Compare both policies in the same evaluation setup.
 # TODO(adam): paste the notebook URLs once published. Empty url = rendered as "link to be published".
 notebooks:
