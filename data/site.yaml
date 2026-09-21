@@ -19,7 +19,7 @@ speaker:
     - label: LinkedIn
       url: https://www.linkedin.com/in/dabrowskiadam/
 slides:
-  # Path under static/. Replace with the final export (the one carrying the QR code).
+  # Path under static/. Final export of 22 September 2026, carrying the QR code.
   pdf: slides/ROSCon2026_Simulation_Toolbox.pdf
   label: Slides (PDF)
 # Date the release labels and links were last checked against upstream.

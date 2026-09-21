@@ -20,11 +20,12 @@ groups:
           - { label: Project page, url: "https://libero-project.github.io/main.html" }
   - title: Robotics and world building
     items:
-      - id: coppeliasim
-        name: CoppeliaSim
-        text: Robot cells and mechanisms with kinematics, motion planning and scripting. Useful for coordinated automation.
+      - id: drake
+        name: Drake
+        text: Manipulation with contact-rich physics, plus planning, trajectory optimization and controller design. Built for optimization rather than rollouts; gradients built in.
         links:
-          - { label: coppeliarobotics.com, url: "https://www.coppeliarobotics.com/" }
+          - { label: drake.mit.edu, url: "https://drake.mit.edu/" }
+          - { label: Repository, url: "https://github.com/RobotLocomotion/drake" }
       - id: webots
         name: Webots
         text: Robot models, sensors and controllers in an integrated environment. Useful for prototyping and repeatable controller experiments.
