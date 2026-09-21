@@ -4,7 +4,7 @@ groups:
     items:
       - id: schola
         name: Schola
-        text: Unreal-to-Python RL integration with vectorised and multi-agent workflows. Useful for authored training environments.
+        text: Unreal-to-Python RL integration with vectorized and multi-agent workflows. Useful for authored training environments.
         links:
           - { label: AMD Schola, url: "https://gpuopen.com/amd-schola/" }
       - id: sapien-maniskill
@@ -30,10 +30,10 @@ groups:
         text: Robot models, sensors and controllers in an integrated environment. Useful for prototyping and repeatable controller experiments.
         links:
           - { label: Repository, url: "https://github.com/cyberbotics/webots" }
-          - { label: ROS 2 guide, url: "https://cyberbotics.com/doc/guide/ros2" }
+          - { label: webots_ros2 wiki, url: "https://github.com/cyberbotics/webots_ros2/wiki" }
       - id: unreal
         name: Unreal Engine
-        text: Detailed environments, behaviour authoring and visual simulation. Matters for photorealism.
+        text: Detailed environments, behavior authoring and visual simulation. Matters for photorealism.
         links:
           - { label: UE5 for robotics simulation, url: "https://www.unrealengine.com/spotlights/ue5-is-becoming-the-platform-of-choice-for-robotics-simulation" }
       - id: unity

@@ -11,7 +11,7 @@ groups:
     items:
       - label: ros-simulation on GitHub
         url: https://github.com/ros-simulation
-      - label: Standardising simulation interfaces (blog)
+      - label: Standardizing simulation interfaces (blog)
         url: https://www.robotec.ai/blog/robotics/standardizing-simulation-interfaces-for-open-source-robotics
       - label: "ROS Discourse · draft REP-158: OpenUSD conventions for simulation asset interoperability"
         url: https://discourse.openrobotics.org/t/draft-rep-158-openusd-conventions-for-simulation-asset-interoperability-in-open-source-robotics/55526

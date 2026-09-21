@@ -1,11 +1,9 @@
-# The core simulators covered in the talk, one entry each.
+# The core simulators covered in the talk, one entry each. Wording follows the slides.
 #
 #   id        anchor used by cheatsheet.yaml (#sim-<id>)
 #   tags      sil | learning | physics  (drive the filter chips)
-#   links     kind: release | docs | ros | learning | demo   (drives the icon/colour)
+#   links     kind: release | docs | ros | learning | demo   (drives the chip colour)
 #   verified  date the version label and links were last checked upstream
-#
-# To bump a release: change `version`/`released`, update `verified`, done.
 
 - id: gazebo
   name: Gazebo
@@ -15,11 +13,11 @@
   tags: [sil]
   points:
     - title: Great support for ROS packages
-      text: gz_ros2_control provides a controller-manager system plugin; Nav2 maintains Gazebo-based examples; ros_gz_bridge maps supported message types.
+      text: Pairs with ROS 2 Jazzy and later. Most ROS packages ship Gazebo examples; ros_gz bridges topics and services.
     - title: Composable simulation
-      text: SDF, Fuel assets and system/sensor plugins support repeatable scenarios. Custom types need conversions at the bridge, or a plugin can use ROS directly.
-    - title: Jetty demonstrates the standards
-      text: Open-RMF warehouse operations and Simulation Interfaces ship as official demos.
+      text: Swap physics, rendering and sensors as plugins.
+    - title: Community standard
+      text: SDFormat, Fuel asset library, Python bindings; Zenoh transport in Jetty for ROS 2 interoperability. Jetty ships the Simulation Interfaces implementation.
   links:
     - { label: Documentation, url: "https://gazebosim.org/docs/latest/", kind: docs }
     - { label: Releases, url: "https://gazebosim.org/docs/latest/releases/", kind: release }
@@ -36,11 +34,11 @@
   tags: [sil]
   points:
     - title: Operational environments
-      text: Editor, prefabs and scripted behaviours model facilities and interacting subsystems, including multi-robot fleets.
+      text: Editor, prefabs and scripted behaviors model facilities and interacting subsystems.
     - title: Native ROS 2
-      text: Custom messages, services and actions use ROS APIs directly. Built-in TF, time and namespaces; Nav2 and MoveIt integrations.
-    - title: 26.05 adds
-      text: ROS 2 Lyrical support and expanded Simulation Interfaces; warehouse and manipulation templates as starting points.
+      text: Custom messages, services and actions use ROS APIs directly. Built-in TF, time and namespaces, Nav2 and MoveIt.
+    - title: Focused
+      text: No support for robot learning; great for development, software-in-the-loop and operations.
   links:
     - { label: Robotics overview, url: "https://www.docs.o3de.org/docs/user-guide/interactivity/robotics/overview/", kind: docs }
     - { label: ROS 2 Gem reference, url: "https://www.docs.o3de.org/docs/user-guide/gems/reference/robotics/ros2/", kind: ros }
@@ -58,12 +56,12 @@
   verified: 2026-09-17
   tags: [sil, learning]
   points:
-    - title: Perception and data
-      text: Replicator combines scene randomisation with labelled sensor output for perception pipelines.
-    - title: Application workflows
-      text: Nav2, MoveIt and ros2_control connect sensing, planning and actuation. Custom ROS interfaces are supported with the documented build setup.
-    - title: Learning and evaluation
-      text: Isaac Lab supplies training workflows; 6.1 improves policy testing and configuration transfer into Isaac Sim.
+    - title: Sensors and physics
+      text: RTX cameras, lidar and radar; PhysX or Newton (MuJoCo Warp) behind one API.
+    - title: ROS 2 in the loop
+      text: Bridge for Humble and Jazzy. 6.1 adds an in-process ros2_control manager.
+    - title: Hardware
+      text: Needs an RTX GPU with RT cores (min. RTX 4080, 16 GB); no CPU or other-vendor path. Apache 2.0 code on a proprietary Kit SDK.
   links:
     - { label: 6.1 announcement, url: "https://forums.developer.nvidia.com/t/isaac-sim-6-1-general-availability/383280", kind: release }
     - { label: Requirements, url: "https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/requirements.html", kind: docs }
@@ -81,7 +79,7 @@
   tags: [learning, physics]
   points:
     - title: Control mechanics
-      text: Contacts, actuators, tendons and constraints suit locomotion and manipulation. 3.13.0 adds a discrete integrator for stiff springs and actuation.
+      text: Contacts, actuators, tendons and constraints suit locomotion and manipulation.
     - title: A ready learning stack
       text: Playground provides tasks and training examples; Menagerie provides robot models.
     - title: Execution choices
@@ -101,12 +99,12 @@
   verified: 2026-09-17
   tags: [learning, physics]
   points:
+    - title: OpenUSD + MuJoCo + Warp
+      text: An extensible GPU physics engine under the Linux Foundation.
     - title: Extensible physics
-      text: Warp kernels and solver selection; deformables, gradients, constraints and material coupling. Hydroelastic contact and deformable examples show why solver choice matters.
-    - title: 1.6.0 adds
-      text: OpenUSD particle and deformable workflows and compliant-mechanism capabilities. Some controller features remain explicitly experimental.
-    - title: Ecosystem lesson
-      text: Its relationship to MuJoCo Warp and Isaac Sim shows how engines, solvers and applications now layer.
+      text: Warp kernels and solver selection; deformables, gradients, constraints, material coupling.
+    - title: Under LF but backend lock-in
+      text: Requires Warp (CUDA JIT), so an NVIDIA backend.
   links:
     - { label: Repository and examples, url: "https://github.com/newton-physics/newton", kind: docs }
     - { label: Releases, url: "https://github.com/newton-physics/newton/releases", kind: release }
@@ -120,11 +118,11 @@
   tags: [learning, physics]
   points:
     - title: Coupled physics
-      text: Rigid bodies, deformables and particles can share a scene through explicit solver coupling (FEM, MPM, PBD/SPH).
+      text: Rigid, FEM, MPM and PBD/SPH solvers share one scene; explicit, SAP or IPC couplers resolve contact between them.
     - title: Task variation at scale
-      text: Parallel and heterogeneous environments, domain randomisation and batched IK support training.
+      text: Parallel and heterogeneous environments, domain randomization and batched IK support training.
     - title: Beyond state-only policies
-      text: Camera, depth, contact and tactile sensing support perception and interaction tasks.
+      text: Cameras (path-traced or raster), lidar, IMU, contact-force and tactile taxel grids; differentiable by design.
   links:
     - { label: Repository, url: "https://github.com/Genesis-Embodied-AI/genesis-world", kind: docs }
     - { label: Releases, url: "https://github.com/Genesis-Embodied-AI/genesis-world/releases", kind: release }

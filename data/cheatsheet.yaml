@@ -9,7 +9,7 @@ rows:
   - problem: Train a policy
     candidates:
       - { name: MuJoCo / Playground, ref: mujoco }
-      - { name: Genesis, ref: genesis }
+      - { name: Genesis World, ref: genesis }
       - { name: Isaac Lab, ref: isaac-sim }
     factor: Task and compute backend
   - problem: Large, rich scenes
@@ -20,7 +20,7 @@ rows:
   - problem: Custom physics
     candidates:
       - { name: Newton, ref: newton }
-      - { name: Genesis, ref: genesis }
+      - { name: Genesis World, ref: genesis }
       - { name: MuJoCo (backends), ref: mujoco }
     factor: Required solver features
   - problem: Policy benchmarks

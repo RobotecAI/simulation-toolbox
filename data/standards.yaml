@@ -25,10 +25,10 @@ simulation_interfaces:
 rep158:
   id: rep-158
   title: OpenUSD · REP-158
-  status: In vote
+  status: Accepted
   pillars:
     - title: Upstream standards and sim-ready assets
-      text: Adopt OpenUSD and Sim Ready practices, modular composition — neutral physics plus optional simulator-specific layers.
+      text: Adopt OpenUSD standard and SimReady practices, modular composition, neutral physics plus optional simulator-specific layers.
     - title: Declarative ROS schemas
       text: Topics, services, actions and frames in the asset, independent of the simulator's implementation.
     - title: Compatibility and downstream export

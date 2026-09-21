@@ -23,7 +23,7 @@
     {{- with $st.rep158 }}
     <article class="standard" id="{{ .id }}">
       <div class="standard-text">
-        <h3>{{ .title }} <span class="badge badge-vote">{{ .status }}</span></h3>
+        <h3>{{ .title }} <span class="badge badge-ok">{{ .status }}</span></h3>
         <ol class="pillars">
         {{- range .pillars }}<li><strong>{{ .title }}</strong><span>{{ .text }}</span></li>{{ end }}
         </ol>
