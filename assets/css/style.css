@@ -121,17 +121,6 @@ tbody th { font-weight: 600; white-space: nowrap; }
 .tool-links { font-size: .9rem; }
 
 /* Standards */
-.stack { display: grid; gap: .6rem; margin: 1.5rem 0 2.2rem; }
-.layer { display: grid; grid-template-columns: 1.1fr 1.6fr 1.6fr auto; gap: .6rem 1.2rem; align-items: center; padding: .9rem 1.1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
-a.layer:hover { text-decoration: none; border-color: var(--accent); }
-.layer-shared { font-weight: 700; }
-.layer-reusable { color: var(--muted); font-size: .95rem; }
-.layer-enabling { font-weight: 600; }
-.layer-status { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: .15rem .55rem; border-radius: 6px; white-space: nowrap; }
-.layer-available .layer-status { background: var(--ok-soft); color: var(--ok); }
-.layer-in-vote .layer-status { background: var(--warm-soft); color: var(--warm); }
-.layer-open .layer-status { background: var(--open-soft); color: var(--open); }
-.layer-open { border-style: dashed; }
 .standard { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: start; padding: 1.6rem 0; border-top: 1px solid var(--line); }
 .standard:not(:has(.standard-figure)) { grid-template-columns: 1fr; }
 .standard h3 { font-size: 1.35rem; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
@@ -170,8 +159,6 @@ a.layer:hover { text-decoration: none; border-color: var(--accent); }
 /* Responsive */
 @media (max-width: 860px) {
   .hero-grid, .practice-grid, .standard { grid-template-columns: 1fr; }
-  .layer { grid-template-columns: 1fr; gap: .2rem; }
-  .layer-status { justify-self: start; margin-top: .3rem; }
   .compare-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
@@ -189,6 +176,6 @@ a.layer:hover { text-decoration: none; border-color: var(--accent); }
 }
 @media print {
   .topbar, .filters, .skip, .cta { display: none; }
-  .card, .layer, table { break-inside: avoid; box-shadow: none; }
+  .card, table { break-inside: avoid; box-shadow: none; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; color: var(--muted); }
 }

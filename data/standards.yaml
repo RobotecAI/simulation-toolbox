@@ -1,20 +1,4 @@
-title: A toolbox and co-simulation
-toolbox:
-  - shared: Simulation workloads
-    reusable: Spawn, reset, step and test orchestration
-    enabling: Simulation Interfaces
-    status: available
-    ref: simulation-interfaces
-  - shared: Assets and scenes
-    reusable: Robot and environment descriptions
-    enabling: Interoperable OpenUSD (REP-158)
-    status: in vote
-    ref: rep-158
-  - shared: Runtime state
-    reusable: State exchanged between coupled simulations
-    enabling: Co-simulation — TODO (FMI, DCP are an underwhelming fit)
-    status: open
-
+title: Standards
 simulation_interfaces:
   id: simulation-interfaces
   title: Simulation Interfaces

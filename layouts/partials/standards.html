@@ -2,18 +2,6 @@
 <section class="section" id="standards">
   <div class="wrap">
     <h2>{{ $st.title }}</h2>
-    <div class="stack" aria-label="What needs to be shared between simulators">
-      {{- range $st.toolbox }}
-      {{- $cls := printf "layer layer-%s" (replaceRE " " "-" .status) }}
-      {{- if .ref }}<a class="{{ $cls }}" href="#{{ .ref }}">{{ else }}<div class="{{ $cls }}">{{ end }}
-        <span class="layer-shared">{{ .shared }}</span>
-        <span class="layer-reusable">{{ .reusable }}</span>
-        <span class="layer-enabling">{{ .enabling }}</span>
-        <span class="layer-status">{{ .status }}</span>
-      {{- if .ref }}</a>{{ else }}</div>{{ end }}
-      {{- end }}
-    </div>
-
     {{- with $st.simulation_interfaces }}
     <article class="standard" id="{{ .id }}">
       <div class="standard-text">
