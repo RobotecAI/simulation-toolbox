@@ -25,11 +25,3 @@ groups:
       - label: ROSCon 2026
         url: https://roscon.ros.org/2026/
         text: Toronto, 22–24 September 2026.
-# Optional: link the other sessions of the workshop. Rendered only when `url` is set.
-workshop_sessions: []
-#  - title: Fine-tuning on GPUs, from cloud to robot
-#    url: ""
-#  - title: Reinforcement learning for robotics
-#    url: ""
-#  - title: Local inference of embodied AI
-#    url: ""

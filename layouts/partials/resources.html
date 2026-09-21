@@ -14,15 +14,6 @@
         </ul>
       </div>
     {{- end }}
-    {{- $sessions := where $r.workshop_sessions "url" "ne" "" }}
-    {{- with $sessions }}
-      <div>
-        <h3>Other sessions in this workshop</h3>
-        <ul class="res-list">
-        {{- range . }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}</a></li>{{ end }}
-        </ul>
-      </div>
-    {{- end }}
     </div>
 
     <div class="qa">

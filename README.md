@@ -19,7 +19,7 @@ filter the simulator cards.
 | Change the decision table                 | `data/cheatsheet.yaml`                 |
 | Update the standards (SI, REP-158, co-sim)| `data/standards.yaml`                  |
 | Publish the notebook links, fix the result| `data/practice.yaml`                   |
-| Talks, community links, other sessions    | `data/resources.yaml`                  |
+| Talks and community links                 | `data/resources.yaml`                  |
 | Session metadata, speaker, slides path    | `data/site.yaml`                       |
 | Intro paragraph                           | `content/_index.md`                    |
 | Replace the slides                        | `static/slides/*.pdf` (+ path in `data/site.yaml`) |
@@ -83,7 +83,6 @@ links and runs on pull requests touching `data/`.
 - [ ] `data/practice.yaml`: paste the two notebook URLs (rendered as "Link to be published" until then) and confirm the 24 % → 1 % fall-rate result and its metric definition with the exercise team.
 - [ ] `data/site.yaml`: official workshop URL, once listed on roscon.ros.org.
 - [ ] `static/slides/`: replace the PDF with the final export carrying the QR code; keep the filename or update `data/site.yaml`.
-- [ ] `data/resources.yaml`: uncomment `workshop_sessions` and link the co-presenters' material, if they agree.
 - [ ] Optional hero image: `static/img/humanoids-warehouse.jpg` (from slide 3) is included but not used, pending confirmation it is our own capture.
 - [ ] Licence check: code MIT, text/data CC BY 4.0 (see `LICENSE`). Change if Robotec.ai prefers Apache-2.0 for the code.
 
