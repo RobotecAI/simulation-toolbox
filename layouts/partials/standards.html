@@ -4,12 +4,13 @@
     <h2>{{ $st.title }}</h2>
     <div class="stack" aria-label="What needs to be shared between simulators">
       {{- range $st.toolbox }}
-      <a class="layer layer-{{ .status | replaceRE " " "-" }}" href="#{{ .ref }}">
+      {{- $cls := printf "layer layer-%s" (replaceRE " " "-" .status) }}
+      {{- if .ref }}<a class="{{ $cls }}" href="#{{ .ref }}">{{ else }}<div class="{{ $cls }}">{{ end }}
         <span class="layer-shared">{{ .shared }}</span>
         <span class="layer-reusable">{{ .reusable }}</span>
         <span class="layer-enabling">{{ .enabling }}</span>
         <span class="layer-status">{{ .status }}</span>
-      </a>
+      {{- if .ref }}</a>{{ else }}</div>{{ end }}
       {{- end }}
     </div>
 
@@ -43,14 +44,5 @@
     </article>
     {{- end }}
 
-    {{- with $st.cosim }}
-    <article class="standard standard-open" id="{{ .id }}">
-      <div class="standard-text">
-        <h3>{{ .title }} <span class="badge badge-open">{{ .status }}</span></h3>
-        <p>{{ .text }}</p>
-        {{ partial "link-chips.html" .links }}
-      </div>
-    </article>
-    {{- end }}
   </div>
 </section>

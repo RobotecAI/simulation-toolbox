@@ -14,7 +14,6 @@ toolbox:
     reusable: State exchanged between coupled simulations
     enabling: Co-simulation — TODO (FMI, DCP are an underwhelming fit)
     status: open
-    ref: co-simulation
 
 simulation_interfaces:
   id: simulation-interfaces
@@ -56,11 +55,3 @@ rep158:
     - { label: Discourse · draft REP-158, url: "https://discourse.openrobotics.org/t/draft-rep-158-openusd-conventions-for-simulation-asset-interoperability-in-open-source-robotics/55526", kind: docs }
     - { label: REP-158 text, url: "https://github.com/openrobotics/reps/blob/main/_posts/rep-0158%3A2006.md", kind: docs }
     - { label: openusd-schemas, url: "https://github.com/ros-simulation/openusd-schemas", kind: ros }
-
-cosim:
-  id: co-simulation
-  title: Co-simulation
-  status: Open problem
-  text: Coupling running simulators needs explicit clocks and ownership of state and dynamics. FMI and DCP are an underwhelming fit.
-  links:
-    - { label: ros-simulation organisation, url: "https://github.com/ros-simulation", kind: ros }

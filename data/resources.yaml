@@ -7,13 +7,9 @@ groups:
         text: Adam Dąbrowski, Ian Chen, Ayush Ghosh.
       - label: "ROSCon 2023 · Simulate robots like never before with Open 3D Engine"
         url: https://vimeo.com/879001753
-      - label: ROSCon 2023 landing page
-        url: https://robotecai.github.io/roscon2023-landing-page/
   - title: Community
     items:
       - label: ros-simulation on GitHub
         url: https://github.com/ros-simulation
       - label: Standardising simulation interfaces (blog)
         url: https://www.robotec.ai/blog/robotics/standardizing-simulation-interfaces-for-open-source-robotics
-      - label: ROSCon 2026
-        url: https://roscon.ros.org/2026/

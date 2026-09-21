@@ -110,7 +110,6 @@ tbody th { font-weight: 600; white-space: nowrap; }
 .points > div { padding: .45rem 0; border-top: 1px dashed var(--line); }
 .points dt { font-weight: 700; font-size: .93rem; }
 .points dd { margin: .1rem 0 0; color: var(--muted); font-size: .93rem; }
-.points-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 2rem; }
 .caveat { margin: .7rem 0 0; padding: .55rem .75rem; border-left: 3px solid var(--warm); background: var(--warm-soft); border-radius: 0 8px 8px 0; font-size: .9rem; }
 
 /* Other tools */
@@ -124,7 +123,7 @@ tbody th { font-weight: 600; white-space: nowrap; }
 /* Standards */
 .stack { display: grid; gap: .6rem; margin: 1.5rem 0 2.2rem; }
 .layer { display: grid; grid-template-columns: 1.1fr 1.6fr 1.6fr auto; gap: .6rem 1.2rem; align-items: center; padding: .9rem 1.1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
-.layer:hover { text-decoration: none; border-color: var(--accent); }
+a.layer:hover { text-decoration: none; border-color: var(--accent); }
 .layer-shared { font-weight: 700; }
 .layer-reusable { color: var(--muted); font-size: .95rem; }
 .layer-enabling { font-weight: 600; }
