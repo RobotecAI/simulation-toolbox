@@ -12,12 +12,12 @@ levers:
   - title: Terrain and curriculum
     text: Introduce the new conditions and control their difficulty.
   - title: Rewards
-    text: Revisit foot clearance, slip and body orientation.
+    text: Revisit foot clearance and body orientation.
   - title: Observations
     text: Review terrain and foot-height information available to the policy.
 # TODO(adam): confirm the number and metric definition with the exercise team.
 result:
-  headline: Fall rate across all terrain difficulty levels reduced from 24% to 1%
+  headline: Fall rate across all terrain difficulty levels reduced from 24% to 1–2%
   text: Same terrain, commands, camera and duration for both policies. Compare falls, foot clearance, slip and body orientation.
 images:
   terrain:

@@ -25,7 +25,7 @@ simulation_interfaces:
 rep158:
   id: rep-158
   title: OpenUSD · REP-158
-  status: Accepted
+  status: In vote
   pillars:
     - title: Upstream standards and sim-ready assets
       text: Adopt OpenUSD standard and SimReady practices, modular composition, neutral physics plus optional simulator-specific layers.

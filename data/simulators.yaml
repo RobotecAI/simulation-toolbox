@@ -59,7 +59,7 @@
     - title: Sensors and physics
       text: RTX cameras, lidar and radar; PhysX or Newton (MuJoCo Warp) behind one API.
     - title: ROS 2 in the loop
-      text: Bridge for Humble and Jazzy. 6.1 adds an in-process ros2_control manager.
+      text: Bridge for Humble and Jazzy. 6.1 adds an in-process ros2_control manager. Isaac Lab trains on the same stack.
     - title: Hardware
       text: Needs an RTX GPU with RT cores (min. RTX 4080, 16 GB); no CPU or other-vendor path. Apache 2.0 code on a proprietary Kit SDK.
   links:
@@ -120,7 +120,7 @@
     - title: Coupled physics
       text: Rigid, FEM, MPM and PBD/SPH solvers share one scene; explicit, SAP or IPC couplers resolve contact between them.
     - title: Task variation at scale
-      text: Parallel and heterogeneous environments, domain randomization and batched IK support training.
+      text: Parallel and heterogeneous environments, domain randomization, batched IK and planning.
     - title: Beyond state-only policies
       text: Cameras (path-traced or raster), lidar, IMU, contact-force and tactile taxel grids; differentiable by design.
   links:
