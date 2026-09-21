@@ -4,20 +4,17 @@ groups:
     items:
       - id: schola
         name: Schola
-        role: learning integration
         text: Unreal-to-Python RL integration with vectorised and multi-agent workflows. Useful for authored training environments.
         links:
           - { label: AMD Schola, url: "https://gpuopen.com/amd-schola/" }
       - id: sapien-maniskill
         name: SAPIEN + ManiSkill
-        role: simulator + task suite
         text: Articulated-object manipulation, including visual observations. ManiSkill adds tasks, datasets and learning infrastructure.
         links:
-          - { label: SAPIEN docs, url: "https://sapien-sim.github.io/docs/index.html" }
+          - { label: SAPIEN, url: "https://sapien-sim.github.io/docs/index.html" }
           - { label: ManiSkill, url: "https://github.com/mani-skill/ManiSkill" }
       - id: libero
         name: LIBERO
-        role: benchmark
         text: Tests transfer across objects, spatial layouts and task goals. Useful when policy evaluation needs a defined manipulation suite.
         links:
           - { label: Project page, url: "https://libero-project.github.io/main.html" }
@@ -25,27 +22,23 @@ groups:
     items:
       - id: coppeliasim
         name: CoppeliaSim
-        role: simulator
         text: Robot cells and mechanisms with kinematics, motion planning and scripting. Useful for coordinated automation.
         links:
           - { label: coppeliarobotics.com, url: "https://www.coppeliarobotics.com/" }
       - id: webots
         name: Webots
-        role: simulator
         text: Robot models, sensors and controllers in an integrated environment. Useful for prototyping and repeatable controller experiments.
         links:
           - { label: Repository, url: "https://github.com/cyberbotics/webots" }
           - { label: ROS 2 guide, url: "https://cyberbotics.com/doc/guide/ros2" }
       - id: unreal
         name: Unreal Engine
-        role: engine
-        text: Detailed environments, behaviour authoring and visual simulation. Matters for photorealism; robotics capabilities depend on the plugins you assemble.
+        text: Detailed environments, behaviour authoring and visual simulation. Matters for photorealism.
         links:
           - { label: UE5 for robotics simulation, url: "https://www.unrealengine.com/spotlights/ue5-is-becoming-the-platform-of-choice-for-robotics-simulation" }
       - id: unity
         name: Unity
-        role: engine
-        text: Existing projects can reuse ros2-for-unity, though it is no longer supported by Robotec.ai. ML-Agents supplies learning workflows.
+        text: Existing projects can reuse ros2-for-unity (no longer supported by Robotec.ai).
         links:
           - { label: ros2-for-unity, url: "https://github.com/RobotecAI/ros2-for-unity" }
           - { label: ML-Agents, url: "https://github.com/Unity-Technologies/ml-agents" }

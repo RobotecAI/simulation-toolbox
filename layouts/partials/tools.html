@@ -1,8 +1,7 @@
 {{- $t := site.Data.tools -}}
 <section class="section section-alt" id="tools">
   <div class="wrap">
-    <h2>Other tools worth knowing</h2>
-    <p class="intro">Different roles: a learning integration, a simulator, a task suite, a benchmark, an engine. Compare actual sensors, models, control interfaces, authoring and maintained integrations, not ROS connectivity alone.</p>
+    <h2>Other tools</h2>
     <div class="tool-groups">
     {{- range $t.groups }}
       <div class="tool-group">
@@ -10,7 +9,7 @@
         <ul class="tool-list">
         {{- range .items }}
           <li id="sim-{{ .id }}">
-            <div class="tool-name"><strong>{{ .name }}</strong> <span class="role">{{ .role }}</span></div>
+            <div class="tool-name"><strong>{{ .name }}</strong></div>
             <p>{{ .text }}</p>
             <p class="tool-links">{{ range $i, $l := .links }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}" rel="noopener">{{ $l.label }}</a>{{ end }}</p>
           </li>

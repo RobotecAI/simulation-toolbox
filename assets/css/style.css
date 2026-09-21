@@ -81,19 +81,7 @@ p { margin: 0 0 .9rem; }
 .section-alt { background: var(--bg-alt); }
 .intro { color: var(--muted); max-width: 48rem; font-size: 1.05rem; }
 .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; }
-.section-head .intro { margin-bottom: .5rem; }
-
-/* Spectrum graphic */
-.spectrum { margin: 1.5rem 0 2rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1rem .4rem; box-shadow: var(--shadow); }
-.spectrum figcaption { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
-.spectrum-svg { width: 100%; height: auto; display: block; }
-.stop-sil { stop-color: var(--sil); } .stop-learn { stop-color: var(--learn); }
-.axis-label { font: 700 20px system-ui, sans-serif; fill: var(--ink); }
-.axis-sub { font: 13px system-ui, sans-serif; fill: var(--muted); }
-.spec-stem { stroke: var(--line); stroke-width: 2; }
-.spec-dot { fill: var(--card); stroke: var(--ink); stroke-width: 3; }
-.spec-label { font: 600 17px system-ui, sans-serif; fill: var(--ink); }
-.spec-pt a:hover .spec-label { fill: var(--accent); text-decoration: underline; }
+.h-note { font-size: .55em; font-weight: 500; margin-left: .6rem; white-space: nowrap; }
 
 /* Tables */
 .table-scroll { overflow-x: auto; }
@@ -176,8 +164,7 @@ tbody th { font-weight: 600; white-space: nowrap; }
 .qr { margin: 0; text-align: center; font-size: .85rem; color: var(--muted); }
 .qr img { width: 160px; border-radius: 8px; margin: 0 auto .3rem; }
 
-/* Contribute and footer */
-.contribute { text-align: center; max-width: 46rem; }
+/* Footer */
 .footer { border-top: 1px solid var(--line); padding-block: 1.6rem 2.4rem; font-size: .92rem; }
 .footer-in p { margin: 0 0 .3rem; }
 
@@ -200,9 +187,6 @@ tbody th { font-weight: 600; white-space: nowrap; }
 }
 @media (max-width: 600px) {
   .topbar nav a:not(.btn) { display: none; }
-  .axis-sub { display: none; }
-  .axis-label { font-size: 26px; }
-  .spec-label { font-size: 22px; }
 }
 @media print {
   .topbar, .filters, .skip, .cta { display: none; }

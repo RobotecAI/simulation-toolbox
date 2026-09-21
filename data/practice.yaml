@@ -1,8 +1,5 @@
 title: Practice · fine-tune a walking policy
-intro: >
-  The exercise starts from a policy trained for flat ground and fine-tunes it
-  on increasingly difficult stairs, then compares both policies in the same
-  evaluation setup.
+intro: Started from a policy trained for flat ground. Increasingly difficult stairs. Compare both policies in the same evaluation setup.
 # TODO(adam): paste the notebook URLs once published. Empty url = rendered as "link to be published".
 notebooks:
   - title: Humanoid locomotion · training

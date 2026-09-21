@@ -1,8 +1,4 @@
 # The decision table from the talk. `ref` values point at ids in simulators.yaml / tools.yaml.
-intro: >
-  Selection guidance, not a ranking. Ask which control interfaces, sensors,
-  custom types, scene behaviours, timing and compute paths your workload needs.
-  ROS connectivity alone does not narrow the field.
 rows:
   - problem: Software-in-the-loop stack tests
     candidates:
@@ -10,30 +6,25 @@ rows:
       - { name: O3DE, ref: o3de }
       - { name: Isaac Sim, ref: isaac-sim }
     factor: Control, sensors, photorealism
-    question: What scene, sensor and integration capabilities does the application need?
   - problem: Train a policy
     candidates:
       - { name: MuJoCo / Playground, ref: mujoco }
       - { name: Genesis, ref: genesis }
       - { name: Isaac Lab, ref: isaac-sim }
     factor: Task and compute backend
-    question: Which task implementation and compute backend fit?
   - problem: Large, rich scenes
     candidates:
       - { name: O3DE, ref: o3de }
       - { name: Unreal, ref: unreal }
     factor: Authoring and performance
-    question: How much of the work is building and animating the operating environment?
   - problem: Custom physics
     candidates:
       - { name: Newton, ref: newton }
       - { name: Genesis, ref: genesis }
       - { name: MuJoCo (backends), ref: mujoco }
     factor: Required solver features
-    question: Does the particular solver support the interaction I need?
   - problem: Policy benchmarks
     candidates:
       - { name: LIBERO, ref: libero }
       - { name: ManiSkill task suites, ref: sapien-maniskill }
     factor: Benchmark fit
-    question: Am I building a task or evaluating against a defined suite?

@@ -2,8 +2,6 @@
 <section class="section" id="standards">
   <div class="wrap">
     <h2>{{ $st.title }}</h2>
-    <p class="intro">{{ $st.intro }}</p>
-
     <div class="stack" aria-label="What needs to be shared between simulators">
       {{- range $st.toolbox }}
       <a class="layer layer-{{ .status | replaceRE " " "-" }}" href="#{{ .ref }}">
@@ -19,7 +17,6 @@
     <article class="standard" id="{{ .id }}">
       <div class="standard-text">
         <h3>{{ .title }} <span class="badge badge-ok">{{ .status }}</span></h3>
-        <p>{{ .summary }}</p>
         <dl class="points">
         {{- range .points }}<div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>{{ end }}
         </dl>
@@ -38,7 +35,6 @@
     <article class="standard" id="{{ .id }}">
       <div class="standard-text">
         <h3>{{ .title }} <span class="badge badge-vote">{{ .status }}</span></h3>
-        <p>{{ .summary }}</p>
         <ol class="pillars">
         {{- range .pillars }}<li><strong>{{ .title }}</strong><span>{{ .text }}</span></li>{{ end }}
         </ol>

@@ -2,9 +2,9 @@
 
 Landing page for the **Simulation Toolbox – gearing up for robotics** session
 (Adam Dąbrowski, Robotec.ai) at ROSCon 2026, Toronto. It is the single page
-behind the QR code on the slides: every simulator, standard, talk and resource
-mentioned in the session, verified against current releases, plus the practice
-notebooks.
+behind the QR code on the slides: the simulators, standards, talks and
+resources mentioned in the session, plus the practice notebooks. A snapshot of
+the session, not a living catalogue.
 
 Built as a static site with [Hugo](https://gohugo.io/) and deployed to GitHub
 Pages by GitHub Actions. No JavaScript is required to read it; a few lines
@@ -29,9 +29,7 @@ filter the simulator cards.
 Nothing in `layouts/` contains prose; if you find yourself editing HTML to
 change words, the words belong in a data file instead.
 
-The **workload spectrum** graphic is generated from the `workload` field
-(0 = software-in-the-loop, 100 = robot learning) of each simulator, so it stays
-in sync with the cards. Filter chips use the `tags` field.
+Filter chips on the simulator cards use the `tags` field.
 
 ## Hosting on GitHub Pages
 
@@ -50,7 +48,7 @@ in sync with the cards. Filter chips use the `tags` field.
 The workflow reads the final URL from GitHub, so the site works unchanged for
 a project page, an organisation page or a custom domain (add the domain under
 Settings → Pages; no config change needed). It also passes the repository URL
-in so the page shows "edit / report a stale link" links.
+in so the footer can link to the source.
 
 ### QR code for the slides
 
@@ -73,8 +71,7 @@ tools/check_links.sh   # curl every external link in data/*.yaml
 ```
 
 Any Hugo ≥ 0.110 (extended) works; CI pins `HUGO_VERSION` in
-`.github/workflows/pages.yml`. A weekly `Check links` workflow flags dead
-links and runs on pull requests touching `data/`.
+`.github/workflows/pages.yml`.
 
 ## Before the session — needs Adam
 
@@ -93,15 +90,10 @@ links and runs on pull requests touching `data/`.
 ├── data/                     ← all content
 ├── layouts/
 │   ├── index.html            single-page shell
-│   └── partials/             one file per section + spectrum SVG
+│   └── partials/             one file per section
 ├── assets/css/style.css      theme (light/dark, print)
 ├── static/                   slides PDF, images, favicon
 ├── tools/                    make_qr.py, check_links.sh
-└── .github/workflows/        pages.yml (deploy), links.yml (weekly link check)
+└── .github/workflows/        pages.yml (deploy)
 ```
 
-## Contributing
-
-Found a newer release or a stale link? Edit the relevant YAML in `data/` and
-open a pull request. Keep the `verified` date honest: set it to the day you
-checked the upstream page.

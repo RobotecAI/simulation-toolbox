@@ -1,7 +1,4 @@
 title: A toolbox and co-simulation
-intro: >
-  One simulator rarely covers a whole programme. Three things need to travel
-  between simulators; two of them now have a standard in the ROS ecosystem.
 toolbox:
   - shared: Simulation workloads
     reusable: Spawn, reset, step and test orchestration
@@ -15,68 +12,55 @@ toolbox:
     ref: rep-158
   - shared: Runtime state
     reusable: State exchanged between coupled simulations
-    enabling: Co-simulation — open problem (FMI and DCP are an underwhelming fit)
+    enabling: Co-simulation — TODO (FMI, DCP are an underwhelming fit)
     status: open
     ref: co-simulation
 
 simulation_interfaces:
   id: simulation-interfaces
   title: Simulation Interfaces
-  status: ROS 2 standard interfaces
-  summary: >
-    A standard set of ROS 2 services, messages and actions to control any
-    simulator the same way: spawn and delete entities, get and set entity
-    state, reset, step and query supported features.
+  status: ROS 2 standard
   points:
     - title: Reusable test workflows
-      text: One scenario script controls spawning, entity state, reset and stepping across simulators through backend flags and asset mappings.
+      text: Interoperable scenario script controls spawning, entity state, reset and stepping.
     - title: Working examples
-      text: Gazebo, O3DE and Isaac Sim share the warehouse scene. An RViz2 control plugin drives all of them. Use GetSimulatorFeatures to discover support.
+      text: Gazebo, O3DE and Isaac Sim share the warehouse scene. RViz2 control plugin.
     - title: Broader adoption
-      text: Community Newton and Genesis World bridges implement subsets. This is workload reuse, not byte-identical assets or equal physics.
+      text: Community Newton and Genesis World bridges implement subsets.
   image:
     src: img/shared-warehouse.jpg
     alt: The same warehouse scenario running in three simulators
-    caption: The shared warehouse scenario, originating from NVIDIA assets, with Gazebo, O3DE and Isaac Sim projects.
+    caption: The shared warehouse scenario in Gazebo, O3DE and Isaac Sim.
   links:
-    - { label: simulation_interfaces (ROS package), url: "https://github.com/ros-simulation/simulation_interfaces", kind: ros }
+    - { label: simulation_interfaces, url: "https://github.com/ros-simulation/simulation_interfaces", kind: ros }
     - { label: Examples · warehouse scenario, url: "https://github.com/ros-simulation/simulation_interfaces_examples", kind: demo }
-    - { label: ROSCon 2025 talk · Introducing the new ROS simulation standard, url: "https://vimeo.com/1136376172", kind: video }
-    - { label: Background blog post, url: "https://www.robotec.ai/blog/robotics/standardizing-simulation-interfaces-for-open-source-robotics", kind: docs }
+    - { label: ROSCon 2025 talk, url: "https://vimeo.com/1136376172", kind: video }
+    - { label: Blog post, url: "https://www.robotec.ai/blog/robotics/standardizing-simulation-interfaces-for-open-source-robotics", kind: docs }
     - { label: Newton bridge (community), url: "https://github.com/vybhav-ibr/newton_ros/tree/main/newton_simulation_interfaces", kind: ros }
     - { label: Genesis bridge (community), url: "https://github.com/vybhav-ibr/genesis_ros/tree/main/gs_simulation_interfaces", kind: ros }
 
 rep158:
   id: rep-158
-  title: OpenUSD conventions · REP-158
+  title: OpenUSD · REP-158
   status: In vote
-  summary: >
-    Conventions so a robot or scene authored once in OpenUSD loads with the
-    same meaning in every simulator, and exports cleanly to glTF and URDF.
   pillars:
     - title: Upstream standards and sim-ready assets
-      text: Adopt the OpenUSD standard and Sim Ready practices with modular composition — neutral physics plus optional simulator-specific layers. MKS units, ROS/Z-up conventions.
+      text: Adopt OpenUSD and Sim Ready practices, modular composition — neutral physics plus optional simulator-specific layers.
     - title: Declarative ROS schemas
-      text: Topics, services, actions and frames live in the asset, independent of the simulator's implementation.
+      text: Topics, services, actions and frames in the asset, independent of the simulator's implementation.
     - title: Compatibility and downstream export
-      text: Material, geometry, instancing and variant rules enable efficient glTF 2.0 and URDF export.
+      text: Efficient glTF and URDF export through material, geometry, instancing and variant rules.
     - title: A shared ecosystem
       text: Core schemas, extension registries and compliance tooling so assets can be checked and reused.
   links:
-    - { label: Discourse · draft REP-158 discussion, url: "https://discourse.openrobotics.org/t/draft-rep-158-openusd-conventions-for-simulation-asset-interoperability-in-open-source-robotics/55526", kind: docs }
-    - { label: REP-158 text (openrobotics/reps), url: "https://github.com/openrobotics/reps/blob/main/_posts/rep-0158%3A2006.md", kind: docs }
-    - { label: openusd-schemas (ros-simulation), url: "https://github.com/ros-simulation/openusd-schemas", kind: ros }
+    - { label: Discourse · draft REP-158, url: "https://discourse.openrobotics.org/t/draft-rep-158-openusd-conventions-for-simulation-asset-interoperability-in-open-source-robotics/55526", kind: docs }
+    - { label: REP-158 text, url: "https://github.com/openrobotics/reps/blob/main/_posts/rep-0158%3A2006.md", kind: docs }
+    - { label: openusd-schemas, url: "https://github.com/ros-simulation/openusd-schemas", kind: ros }
 
 cosim:
   id: co-simulation
   title: Co-simulation
   status: Open problem
-  text: >
-    Coupling running simulators needs explicit clocks and ownership of state and
-    dynamics. FMI and DCP exist but fit robotics workloads poorly. Common asset
-    descriptions do not guarantee matching physics, and common interfaces do not
-    guarantee complete feature support. If you have a working approach, this is
-    the gap the community most needs filled — start a thread on ROS Discourse.
+  text: Coupling running simulators needs explicit clocks and ownership of state and dynamics. FMI and DCP are an underwhelming fit.
   links:
-    - { label: ROS Discourse · Simulation, url: "https://discourse.openrobotics.org/tag/simulation", kind: docs }
     - { label: ros-simulation organisation, url: "https://github.com/ros-simulation", kind: ros }
