@@ -32,6 +32,10 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # Enable Pages (source: GitHub Actions) on first run, so a push that
+          # lands before the Pages setting is made does not fail here.
+          enablement: true
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
